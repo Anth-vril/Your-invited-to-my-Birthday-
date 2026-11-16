@@ -75,7 +75,7 @@
         </p>
 
         <p class="join-text">Join us as we celebrate</p>
-        <h2 class="script-sub">♥ My 18th Milestone ♥</h2>
+        <h2 class="script-sub">♥ Celebrating My 18th Milestone ♥</h2>
 
         <!-- Event Details Grid -->
         <div class="details-grid">
@@ -181,7 +181,10 @@
       <h2 class="modal-title">RSVP</h2>
       <p class="modal-subtitle">Kindly confirm your attendance</p>
 
-      <form id="rsvp-form">
+      <!-- Standard FormSubmit HTML action to prevent errors -->
+      <form id="rsvp-form" action="https://formsubmit.co/missavrilreyes22@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Birthday RSVP!">
+        
         <label for="guest-name">Your Full Name</label>
         <input type="text" id="guest-name" name="Guest_Name" placeholder="Enter your name" required />
 
@@ -213,6 +216,9 @@
   <!-- Toast Notification -->
   <div id="toast" class="toast"></div>
 
+  <script src="script.js"></script>
+</body>
+</html>
   <script src="script.js"></script>
 </body>
 </html>
