@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Celebration Invitation</title>
+  <!-- Google Fonts for Elegant Script & Clean Serif/Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating Rose Petals Container (Animated via JS) -->
+  <div id="petals-container"></div>
+
+  <main class="page-wrapper">
+    <div class="invitation-card">
+      <!-- Inner Arch Border -->
+      <div class="arch-border"></div>
+
+      <!-- Top-Left Watercolor Floral SVG Decoration -->
+      <svg class="floral-top-left" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="burgundyPetal" cx="35%" cy="35%" r="70%">
+            <stop offset="0%" stop-color="#f3d5d8" />
+            <stop offset="45%" stop-color="#8b2635" />
+            <stop offset="85%" stop-color="#4e0d18" />
+            <stop offset="100%" stop-color="#2e060d" />
+          </radialGradient>
+        </defs>
+        <!-- Flower 1 -->
+        <g transform="translate(85, 65) rotate(-15)">
+          <ellipse cx="0" cy="-36" rx="18" ry="34" fill="url(#burgundyPetal)" opacity="0.92"/>
+          <ellipse cx="34" cy="-12" rx="18" ry="34" transform="rotate(72)" fill="url(#burgundyPetal)" opacity="0.88"/>
+          <ellipse cx="21" cy="30" rx="18" ry="34" transform="rotate(144)" fill="url(#burgundyPetal)" opacity="0.9"/>
+          <ellipse cx="-21" cy="30" rx="18" ry="34" transform="rotate(216)" fill="url(#burgundyPetal)" opacity="0.86"/>
+          <ellipse cx="-34" cy="-12" rx="18" ry="34" transform="rotate(288)" fill="url(#burgundyPetal)" opacity="0.92"/>
+          <circle cx="0" cy="0" r="8" fill="#2c060c"/>
+          <circle cx="0" cy="0" r="3" fill="#e8c39e"/>
+        </g>
+        <!-- Flower 2 -->
+        <g transform="translate(45, 115) rotate(20) scale(0.85)">
+          <ellipse cx="0" cy="-36" rx="18" ry="34" fill="url(#burgundyPetal)" opacity="0.9"/>
+          <ellipse cx="34" cy="-12" rx="18" ry="34" transform="rotate(72)" fill="url(#burgundyPetal)" opacity="0.85"/>
+          <ellipse cx="21" cy="30" rx="18" ry="34" transform="rotate(144)" fill="url(#burgundyPetal)" opacity="0.88"/>
+          <ellipse cx="-21" cy="30" rx="18" ry="34" transform="rotate(216)" fill="url(#burgundyPetal)" opacity="0.9"/>
+          <ellipse cx="-34" cy="-12" rx="18" ry="34" transform="rotate(288)" fill="url(#burgundyPetal)" opacity="0.87"/>
+          <circle cx="0" cy="0" r="7" fill="#2c060c"/>
+          <circle cx="0" cy="0" r="2.5" fill="#e8c39e"/>
+        </g>
+      </svg>
+
+      <!-- Card Content -->
+      <div class="card-content">
+        <p class="subtitle-top">YOU'RE INVITED TO</p>
+        <h1 class="main-title">Birthday</h1>
+        <p class="subtitle-bottom">CELEBRATION</p>
+
+        <div class="heart-divider">♥</div>
+
+        <!-- Celebrant Photo Frame -->
+        <div class="photo-frame-wrapper">
+          <div class="photo-arch">
+            <img src="pic.jpg" alt="Birthday Celebrant" class="celebrant-photo" />
+          </div>
+        </div>
+
+        <p class="quote-text">
+          Another year, more dreams,<br />
+          more happiness and more love!
+        </p>
+
+        <p class="join-text">Join us as we celebrate</p>
+        <h2 class="script-sub">♥ My Birthday ♥</h2>
+
+        <!-- Event Details Grid -->
+        <div class="details-grid">
+          <div class="detail-item">
+            <i class="fa-regular fa-calendar-days detail-icon"></i>
+            <p class="detail-primary">FRIDAY</p>
+            <p class="detail-secondary">20 NOV 2026</p>
+          </div>
+
+          <div class="detail-item border-sides">
+            <i class="fa-regular fa-clock detail-icon"></i>
+            <p class="detail-primary">9:00 PM</p>
+            <p class="detail-secondary">TO 6:00 AM</p>
+          </div>
+
+          <div class="detail-item">
+            <i class="fa-solid fa-location-dot detail-icon"></i>
+            <p class="detail-primary">HACIENDA AMARA</p>
+            <p class="detail-secondary">Montalban Heights,<br />San Jose, Rodriguez, Rizal</p>
+          </div>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-box" id="countdown">
+          <div class="time-unit"><span id="days">00</span><small>Days</small></div>
+          <div class="time-unit"><span id="hours">00</span><small>Hrs</small></div>
+          <div class="time-unit"><span id="minutes">00</span><small>Mins</small></div>
+          <div class="time-unit"><span id="seconds">00</span><small>Secs</small></div>
+        </div>
+
+        <p class="closing-note">
+          Your presence will make<br />
+          my day extra special!
+        </p>
+        <div class="heart-divider">♥</div>
+        <h3 class="see-you">See you there!</h3>
+        <div class="heart-divider">♥</div>
+
+        <!-- Interactive Action Buttons -->
+        <div class="action-buttons">
+          <button id="open-rsvp-btn" class="btn btn-primary">
+            <i class="fa-solid fa-envelope-open-text"></i> RSVP Now
+          </button>
+          <button id="map-btn" class="btn btn-outline">
+            <i class="fa-solid fa-map-location-dot"></i> View Map
+          </button>
+          <button id="calendar-btn" class="btn btn-outline">
+            <i class="fa-regular fa-calendar-plus"></i> Save Date
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Watercolor Floral SVG Decoration -->
+      <svg class="floral-bottom" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(55, 85)">
+          <circle cx="0" cy="0" r="34" fill="#4e0c17" opacity="0.95"/>
+          <circle cx="0" cy="0" r="24" fill="#6b1423" opacity="0.9"/>
+          <circle cx="0" cy="0" r="10" fill="#230409"/>
+        </g>
+        <g transform="translate(135, 82) rotate(12)">
+          <ellipse cx="0" cy="-28" rx="12" ry="26" fill="#8b1e2f" opacity="0.92"/>
+          <ellipse cx="26" cy="-8" rx="12" ry="26" transform="rotate(72)" fill="#701322" opacity="0.9"/>
+          <ellipse cx="16" cy="22" rx="12" ry="26" transform="rotate(144)" fill="#8b1e2f" opacity="0.92"/>
+          <ellipse cx="-16" cy="22" rx="12" ry="26" transform="rotate(216)" fill="#701322" opacity="0.9"/>
+          <ellipse cx="-26" cy="-8" rx="12" ry="26" transform="rotate(288)" fill="#8b1e2f" opacity="0.92"/>
+          <circle cx="0" cy="0" r="5" fill="#f3d5d8"/>
+        </g>
+        <g transform="translate(220, 88)">
+          <circle cx="0" cy="0" r="32" fill="#590e1b" opacity="0.95"/>
+          <circle cx="-10" cy="-6" r="22" fill="#781727" opacity="0.85"/>
+          <circle cx="10" cy="-4" r="20" fill="#470913" opacity="0.9"/>
+        </g>
+        <g transform="translate(335, 72) rotate(-18) scale(1.15)">
+          <ellipse cx="0" cy="-36" rx="18" ry="34" fill="url(#burgundyPetal)" opacity="0.94"/>
+          <ellipse cx="34" cy="-12" rx="18" ry="34" transform="rotate(72)" fill="url(#burgundyPetal)" opacity="0.9"/>
+          <ellipse cx="21" cy="30" rx="18" ry="34" transform="rotate(144)" fill="url(#burgundyPetal)" opacity="0.92"/>
+          <ellipse cx="-21" cy="30" rx="18" ry="34" transform="rotate(216)" fill="url(#burgundyPetal)" opacity="0.88"/>
+          <ellipse cx="-34" cy="-12" rx="18" ry="34" transform="rotate(288)" fill="url(#burgundyPetal)" opacity="0.94"/>
+          <circle cx="0" cy="0" r="8" fill="#2c060c"/>
+          <circle cx="0" cy="0" r="3" fill="#e8c39e"/>
+        </g>
+      </svg>
+    </div>
+  </main>
+
+  <!-- Interactive RSVP Modal -->
+  <div id="rsvp-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <button id="close-modal-btn" class="close-btn" aria-label="Close">&times;</button>
+      <h2 class="modal-title">RSVP</h2>
+      <p class="modal-subtitle">Kindly confirm your attendance</p>
+
+      <form id="rsvp-form">
+        <label for="guest-name">Your Full Name</label>
+        <input type="text" id="guest-name" name="Guest_Name" placeholder="Enter your name" required />
+
+        <label for="attendance">Will you attend?</label>
+        <select id="attendance" name="Attendance" required>
+          <option value="Joyfully Accepts">Joyfully Accepts</option>
+          <option value="Regretfully Declines">Regretfully Declines</option>
+        </select>
+
+        <label for="guests-count">Number of Guests</label>
+        <input type="number" id="guests-count" name="Number_of_Guests" min="1" max="5" value="1" required />
+
+        <label for="wishes">Birthday Wish (Optional)</label>
+        <textarea id="wishes" name="Birthday_Wish" rows="3" placeholder="Write a sweet message..."></textarea>
+
+        <button type="submit" id="submit-rsvp-btn" class="btn btn-primary full-width">Send Confirmation</button>
+      </form>
+
+      <!-- Confirmation Message -->
+      <div id="rsvp-success" class="hidden">
+        <div class="success-icon">♥</div>
+        <h3>Thank You!</h3>
+        <p id="confirmation-text"></p>
+        <button id="done-btn" class="btn btn-outline">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
